@@ -11,18 +11,18 @@ public class CarTest {
     void setUp() {
         car = new Car("BMW", "3 Series",3000);
         car.setHasAirCon(true);
-        car.setHasIndicators(false);
+        car.hasIndicators = false;
         car.setMaximumOccupancy(5);
     }
 
     @Test
     void checkIndicatorsOverridden() {
-        assertThat(car.getHasIndicators()).isEqualTo(false);
+        assertThat(car.hasIndicators).isEqualTo(false);
     }
 
     @Test
     void checkCanGetAirCon() {
-        assertThat(car.getHasAirCon()).isEqualTo(true);
+        assertThat(car.hasAirCon).isEqualTo(true);
     }
 
     @Test

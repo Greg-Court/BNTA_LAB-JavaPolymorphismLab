@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 
 public abstract class F1Car extends MotorVehicle {
-    ArrayList<String> possibleDrivers;
-    String livery;
-    int strategyTeamAbility;
+    protected ArrayList<String> possibleDrivers;
+    protected String livery;
+    protected int strategyTeamAbility;
+    protected String currentDriver;
 
     public F1Car(String make, String model, int value) {
         super(make, model, value);
@@ -40,5 +41,13 @@ public abstract class F1Car extends MotorVehicle {
 
     public int getStrategyTeamAbility() {
         return strategyTeamAbility;
+    }
+
+    public String getCurrentDriver() {
+        return this.currentDriver;
+    }
+
+    public void setCurrentDriver(String currentDriver) {
+        this.currentDriver = currentDriver;
     }
 }

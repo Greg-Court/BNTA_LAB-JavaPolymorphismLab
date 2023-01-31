@@ -1,7 +1,13 @@
 import java.util.ArrayList;
 
 public class Showroom {
-    ArrayList<MotorVehicle> vehicles;
+    private ArrayList<MotorVehicle> vehicles;
+
+    // Constructor
+
+    public Showroom() {
+        this.vehicles = new ArrayList<>();
+    }
     
     public void addVehicle(MotorVehicle vehicle) {
         vehicles.add(vehicle);

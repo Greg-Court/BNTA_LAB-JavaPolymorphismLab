@@ -1,5 +1,4 @@
 public class Ferarri extends F1Car {
-    private String currentDriver;
     public Ferarri(String make, String model, int value) {
         super(make, model, value);
     }
@@ -17,11 +16,4 @@ public class Ferarri extends F1Car {
         return "There's always next season...";
     }
 
-    public String getCurrentDriver() {
-        return currentDriver;
-    }
-
-    public void setCurrentDriver(String currentDriver) {
-        this.currentDriver = currentDriver;
-    }
 }

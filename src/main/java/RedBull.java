@@ -1,5 +1,4 @@
 public class RedBull extends F1Car {
-    private String currentDriver;
 
     public RedBull(String make, String model, int value) {
         super(make, model, value);

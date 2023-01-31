@@ -15,14 +15,6 @@ public abstract class MotorVehicle {
         return "Vroom vroom";
     }
 
-    public String getMake() {
-        return make;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public String getLicenseType() {
         return licenseType;
     }

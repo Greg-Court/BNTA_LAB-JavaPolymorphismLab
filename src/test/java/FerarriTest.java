@@ -19,11 +19,11 @@ public class FerarriTest {
 
     @Test
     void canGetMake() {
-        assertThat(ferarri.getMake()).isEqualTo("Ferarri");
+        assertThat(ferarri.make).isEqualTo("Ferarri");
     }
     @Test
     void canGetModel() {
-        assertThat(ferarri.getModel()).isEqualTo("SF22");
+        assertThat(ferarri.model).isEqualTo("SF22");
     }
     @Test
     void canGetValue() {
@@ -35,12 +35,12 @@ public class FerarriTest {
     }
     @Test
     void canGetMaximumOccupancy() {
-        assertThat(ferarri.getMaximumOccupancy()).isEqualTo(1);
+        assertThat(ferarri.maximumOccupancy).isEqualTo(1);
     }
 
     @Test
     void canGetStrategyTeamAbility() {
-        assertThat(ferarri.getStrategyTeamAbility()).isEqualTo(0);
+        assertThat(ferarri.strategyTeamAbility).isEqualTo(0);
     }
 
     @Test

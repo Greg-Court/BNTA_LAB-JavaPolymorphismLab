@@ -1,7 +1,7 @@
 public class Car extends MotorVehicle {
-    private boolean hasAirCon;
+    protected boolean hasAirCon;
 
-    private boolean hasIndicators = true;
+    protected boolean hasIndicators = true;
     public Car(String make, String model, int value) {
         super(make, model, value);
         this.licenseType = "Car License";
@@ -15,11 +15,4 @@ public class Car extends MotorVehicle {
         return this.hasAirCon;
     }
 
-    public void setHasIndicators(boolean indicators) {
-        this.hasIndicators = indicators;
-    }
-
-    public boolean getHasIndicators() {
-        return this.hasIndicators;
-    }
 }

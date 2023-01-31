@@ -1,4 +1,6 @@
-public class Car extends MotorVehicle {
+import interfaces.Driveable;
+
+public class Car extends MotorVehicle implements Driveable {
     protected boolean hasAirCon;
 
     protected boolean hasIndicators = true;
@@ -11,8 +13,11 @@ public class Car extends MotorVehicle {
     public void setHasAirCon(boolean airCon) {
         this.hasAirCon = airCon;
     }
-    public boolean getHasAirCon() {
-        return this.hasAirCon;
+    public String accelerate() {
+        return "Road car engine sounds";
     }
 
+    @Override
+    public String drive(int topSpeed) {
+        return "Reached a speed of " + topSpeed;    }
 }

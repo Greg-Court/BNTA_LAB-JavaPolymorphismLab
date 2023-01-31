@@ -16,7 +16,7 @@ public class CarTest {
     }
 
     @Test
-    void checkIndicatorsOverridden() {
+    void checkIndicatorsOverwritten() {
         assertThat(car.hasIndicators).isEqualTo(false);
     }
 
@@ -33,6 +33,11 @@ public class CarTest {
     @Test
     void checkMaxOccupancy() {
         assertThat(car.maximumOccupancy).isEqualTo(5);
+    }
+
+    @Test
+    void checkAccelerate() {
+        assertThat(car.accelerate()).isEqualTo("Road car engine sounds");
     }
 
 }

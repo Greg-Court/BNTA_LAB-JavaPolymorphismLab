@@ -4,6 +4,7 @@ public abstract class MotorVehicle {
     protected String licenseType;
     protected int maximumOccupancy;
     protected int value;
+    protected int topSpeed;
 
     public MotorVehicle(String make, String model, int value) {
         this.make = make;
@@ -11,16 +12,8 @@ public abstract class MotorVehicle {
         this.value = value;
     }
 
-    public String accelerate() {
-        return "Vroom vroom";
-    }
-
     public String getLicenseType() {
         return licenseType;
-    }
-
-    public int getMaximumOccupancy() {
-        return maximumOccupancy;
     }
 
     public int getValue() {
@@ -30,4 +23,12 @@ public abstract class MotorVehicle {
     public void setMaximumOccupancy(int maximumOccupancy) {
         this.maximumOccupancy = maximumOccupancy;
     }
+
+    public void setTopSpeed(int topSpeed) {
+        this.topSpeed = topSpeed;
+    }
+
+    // Abstract method in superclass
+    public abstract String accelerate();
+
 }

@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestTemplate;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -10,13 +11,12 @@ public class FerarriTest {
     @BeforeEach
     void setUp() {
         ferarri = new Ferarri("Ferarri", "SF22", 12000000);
-        ferarri.setCurrentDriver("Carlos Sainz");
-        ferarri.setMaximumOccupancy(1);
-        ferarri.setStrategyTeamAbility(0);
         ferarri.setLivery("Rosso Corsa");
-        ferarri.setCurrentDriver("Carlos Sainz");
     }
-
+    @Test
+    void checkDRS() {
+        assertThat(ferarri.activateDRS()).isEqualTo("DRS Activating!");
+    }
     @Test
     void canGetMake() {
         assertThat(ferarri.make).isEqualTo("Ferarri");
@@ -28,10 +28,6 @@ public class FerarriTest {
     @Test
     void canGetValue() {
         assertThat(ferarri.getValue()).isEqualTo(12000000);
-    }
-    @Test
-    void canGetDriver() {
-        assertThat(ferarri.getCurrentDriver()).isEqualTo("Carlos Sainz");
     }
     @Test
     void canGetMaximumOccupancy() {
@@ -49,23 +45,31 @@ public class FerarriTest {
     }
 
     @Test
-    void canAccelerate() {
-        assertThat(ferarri.accelerate()).isEqualTo("Vroom vroom");
-    }
-
-    @Test
     void checkCarlosSainzIsFerarriStrategyTeam() {
+        ferarri.setCurrentDriver(ferarri.possibleDrivers.get(0));
         assertThat(ferarri.boxBox()).isEqualTo("No, I will box when I decide.");
     }
-
     @Test
     void checkFerarriIsAFerarri() {
-        assertThat(ferarri.breakDown()).isEqualTo("Engine failure");
+        assertThat(ferarri.breakDown()).isEqualTo("Catch fire");
     }
 
     @Test
     void checkFerarriFansAreTifosi() {
         assertThat(ferarri.disappointTifosi()).isEqualTo("There's always next season...");
     }
+    @Test
+    void checkGetLicenseType() {
+        assertThat(ferarri.getLicenseType()).isEqualTo("Super License");
+    }
 
+    @Test
+    void checkAccelerate__noArgument() {
+        assertThat(ferarri.accelerate()).isEqualTo("Ferarri F1 Turbo V6 Engine Sounds");
+    }
+    @Test
+    void checkAccelerate__withArgument() {
+        String justFerarriThings = "Engine Failure.";
+        assertThat(ferarri.accelerate(justFerarriThings)).isEqualTo("Ferarri F1 Turbo V6 Engine Sounds then... Engine Failure.");
+    }
 }

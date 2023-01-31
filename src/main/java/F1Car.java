@@ -1,6 +1,8 @@
+import interfaces.Driveable;
+
 import java.util.ArrayList;
 
-public abstract class F1Car extends MotorVehicle {
+public abstract class F1Car extends MotorVehicle implements Driveable {
     protected ArrayList<String> possibleDrivers;
     protected String livery;
     protected int strategyTeamAbility;
@@ -8,7 +10,9 @@ public abstract class F1Car extends MotorVehicle {
 
     public F1Car(String make, String model, int value) {
         super(make, model, value);
-        this.licenseType = "SuperLicense";
+        licenseType = "Super License";
+        possibleDrivers = new ArrayList<>();
+        maximumOccupancy = 1;
     }
 
     public String activateDRS() {
@@ -19,35 +23,20 @@ public abstract class F1Car extends MotorVehicle {
         return "Boxing!";
     }
 
-    public void setPossibleDrivers(ArrayList<String> possibleDrivers) {
-        this.possibleDrivers = possibleDrivers;
-    }
-
     public void setLivery(String livery) {
         this.livery = livery;
-    }
-
-    public void setStrategyTeamAbility(int strategyTeamAbility) {
-        this.strategyTeamAbility = strategyTeamAbility;
-    }
-
-    public ArrayList<String> getPossibleDrivers() {
-        return possibleDrivers;
     }
 
     public String getLivery() {
         return livery;
     }
 
-    public int getStrategyTeamAbility() {
-        return strategyTeamAbility;
-    }
-
-    public String getCurrentDriver() {
-        return this.currentDriver;
-    }
-
     public void setCurrentDriver(String currentDriver) {
         this.currentDriver = currentDriver;
+    }
+
+    @Override
+    public String drive(int topSpeed) {
+        return "Reached a speed of " + topSpeed;
     }
 }

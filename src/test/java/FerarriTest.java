@@ -72,4 +72,9 @@ public class FerarriTest {
         String justFerarriThings = "Engine Failure.";
         assertThat(ferarri.accelerate(justFerarriThings)).isEqualTo("Ferarri F1 Turbo V6 Engine Sounds then... Engine Failure.");
     }
+
+    @Test
+    void canDrive() {
+        assertThat(ferarri.drive(220)).isEqualTo("Reached a speed of 220");
+    }
 }

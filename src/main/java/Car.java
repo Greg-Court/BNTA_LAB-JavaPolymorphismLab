@@ -19,5 +19,6 @@ public class Car extends MotorVehicle implements Driveable {
 
     @Override
     public String drive(int topSpeed) {
-        return "Reached a speed of " + topSpeed;    }
+        return "Reached a speed of " + topSpeed;
+    }
 }

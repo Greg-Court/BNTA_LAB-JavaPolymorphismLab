@@ -7,6 +7,7 @@ public class Showroom {
 
     public Showroom() {
         this.vehicles = new ArrayList<>();
+
     }
     
     public void addVehicle(MotorVehicle vehicle) {

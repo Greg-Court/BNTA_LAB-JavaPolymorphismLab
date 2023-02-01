@@ -40,7 +40,8 @@ public class DragRaceTest {
     @Test
     public void canGetReady() {
         dragRace.getReady();
-        assertThat(dragRace.getVehicles().size()).isEqualTo(4);
+        int allVehicles = dragRace.getVehicles().size();
+        assertThat(allVehicles).isEqualTo(4);
     }
 
     @Test

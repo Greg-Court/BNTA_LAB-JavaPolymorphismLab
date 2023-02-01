@@ -40,4 +40,8 @@ public class CarTest {
         assertThat(car.accelerate()).isEqualTo("Road car engine sounds");
     }
 
+    @Test
+    void canDrive() {
+        assertThat(car.drive(200)).isEqualTo("Reached a speed of 200");
+    }
 }
